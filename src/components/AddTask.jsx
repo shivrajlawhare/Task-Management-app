@@ -29,38 +29,38 @@ const AddTask = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-xl font-bold mb-4">Add Task</h2>
+    <div className="max-w-md mx-auto mt-10 p-8 bg-gradient-to-br from-indigo-500 to-purple-600 shadow-xl rounded-lg">
+      <h2 className="text-2xl font-bold text-white mb-6">Create New Task</h2>
       <input
         type="text"
         placeholder="Task ID"
         value={taskID}
         onChange={(e) => setTaskID(e.target.value)}
-        className="w-full mb-3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full mb-4 p-3 border border-indigo-300 rounded-md bg-indigo-50 focus:outline-none focus:ring-4 focus:ring-purple-400"
       />
       <input
         type="text"
         placeholder="Task Name"
         value={taskName}
         onChange={(e) => setTaskName(e.target.value)}
-        className="w-full mb-3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full mb-4 p-3 border border-indigo-300 rounded-md bg-indigo-50 focus:outline-none focus:ring-4 focus:ring-purple-400"
       />
       <input
         type="text"
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="w-full mb-3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full mb-4 p-3 border border-indigo-300 rounded-md bg-indigo-50 focus:outline-none focus:ring-4 focus:ring-purple-400"
       />
       <input
         type="date"
         value={dueDate}
         onChange={(e) => setDueDate(e.target.value)}
-        className="w-full mb-3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full mb-4 p-3 border border-indigo-300 rounded-md bg-indigo-50 focus:outline-none focus:ring-4 focus:ring-purple-400"
       />
       <button
         onClick={addTask}
-        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+        className="w-full py-3 px-6 bg-purple-700 text-white font-semibold rounded-md hover:bg-purple-800 transition-all duration-300 ease-in-out shadow-lg"
       >
         Add Task
       </button>

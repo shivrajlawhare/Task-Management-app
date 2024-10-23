@@ -4,8 +4,7 @@ import TaskList from './components/TaskList';
 
 const App = () => {
   return (
-    <div>
-      <h1>Task Management Application</h1>
+    <div className="min-h-screen bg-gray-50 py-12">
       <AddTask />
       <TaskList />
     </div>

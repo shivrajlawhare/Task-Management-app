@@ -92,27 +92,27 @@ const TaskList = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10">
-      <h2 className="text-2xl font-bold mb-6">Task List</h2>
-      <ul className="space-y-4">
+    <div className="max-w-2xl mx-auto mt-12">
+      <h2 className="text-3xl font-semibold text-blue-700 mb-8">Your Task List</h2>
+      <ul className="space-y-6">
         {tasks.map((task, index) => (
-          <li key={index} className="bg-gray-100 p-4 rounded-md shadow-sm flex justify-between items-center">
+          <li key={index} className="p-6 bg-white border-l-4 border-blue-500 shadow-md rounded-md flex justify-between">
             <div>
-              <p className="text-lg font-semibold">{task.taskID}</p>
-              <p>{task.taskName}</p>
-              <p>{task.description}</p>
-              <p>{task.dueDate}</p>
+              <p className="text-lg font-bold text-blue-700">{task.taskID}</p>
+              <p className="text-blue-600">{task.taskName}</p>
+              <p className="text-gray-700">{task.description}</p>
+              <p className="text-gray-500">{task.dueDate}</p>
             </div>
-            <div className="space-x-3">
+            <div className="flex space-x-4">
               <button
                 onClick={() => deleteTask(task.taskID)}
-                className="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition duration-300"
+                className="bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition-all duration-300 ease-in-out"
               >
                 Delete
               </button>
               <button
                 onClick={() => startEditing(task)}
-                className="bg-yellow-500 text-white py-1 px-3 rounded-md hover:bg-yellow-600 transition duration-300"
+                className="bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600 transition-all duration-300 ease-in-out"
               >
                 Update
               </button>
@@ -122,37 +122,37 @@ const TaskList = () => {
       </ul>
 
       {editingTaskID && (
-        <div className="mt-8 p-6 bg-white shadow-md rounded-lg">
-          <h3 className="text-xl font-bold mb-4">Update Task</h3>
+        <div className="mt-10 p-8 bg-gray-100 shadow-lg rounded-lg">
+          <h3 className="text-xl font-bold text-green-700 mb-4">Update Task</h3>
           <input
             type="text"
             placeholder="Task Name"
             value={updatedName}
             onChange={(e) => setUpdatedName(e.target.value)}
-            className="w-full mb-3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mb-4 p-3 border border-green-300 rounded-md bg-white focus:outline-none focus:ring-4 focus:ring-green-400"
           />
           <input
             type="text"
             placeholder="Description"
             value={updatedDescription}
             onChange={(e) => setUpdatedDescription(e.target.value)}
-            className="w-full mb-3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mb-4 p-3 border border-green-300 rounded-md bg-white focus:outline-none focus:ring-4 focus:ring-green-400"
           />
           <input
             type="date"
             value={updatedDueDate}
             onChange={(e) => setUpdatedDueDate(e.target.value)}
-            className="w-full mb-3 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mb-4 p-3 border border-green-300 rounded-md bg-white focus:outline-none focus:ring-4 focus:ring-green-400"
           />
           <button
             onClick={updateTask}
-            className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-300"
+            className="w-full py-3 px-6 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition-all duration-300 ease-in-out"
           >
             Save
           </button>
           <button
             onClick={() => setEditingTaskID(null)}
-            className="w-full mt-2 bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
+            className="w-full mt-3 py-3 px-6 bg-gray-500 text-white font-semibold rounded-md hover:bg-gray-600 transition-all duration-300 ease-in-out"
           >
             Cancel
           </button>
